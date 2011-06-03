@@ -5,6 +5,8 @@
 	<div class="entry">
     	<%= message.message_text %>
 		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><a href=<%= message.message_url %>>Odkaz</a></span></p>
+		<%= link_to 'Upraviť', edit_message_path(message) %>&nbsp;|&nbsp;
+		<%= link_to 'Zmazať', message, :confirm => 'Ozaj chcete vymazať správu?', :method => :delete %>
 	</div>
 <% end %>
 
