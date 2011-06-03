@@ -4,10 +4,10 @@
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
     	<%= message.message_text %>
-		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><a href=<%= message.message_url %>><%= message.message_url %></a></span></p>
+		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><a href=<%= message.message_url %>>Odkaz</a></span></p>
 	</div>
 <% end %>
 
 <br />
 
-<%= link_to 'New Message', new_message_path %>
+<%= link_to 'Nová správa', new_message_path %>
