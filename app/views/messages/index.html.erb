@@ -1,24 +1,12 @@
-<h1>Listing messages</h1>
-
-<table>
-  <tr>
-    <th>Message text</th>
-    <th>Message url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Novinky</h1>
 
 <% @messages.each do |message| %>
-  <tr>
-    <td><%= message.message_text %></td>
-    <td><%= message.message_url %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+    	<%= message.message_text %>
+		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><a href=<%= message.message_url %>><%= message.message_url %></a></span></p>
+	</div>
 <% end %>
-</table>
 
 <br />
 
