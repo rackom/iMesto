@@ -1,4 +1,6 @@
 IMesto::Application.routes.draw do
+  resources :events
+
   resources :messages
   
   root :to => 'messages#index'
