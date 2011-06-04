@@ -3,7 +3,7 @@
 	<div class="entry">
     	<h2 class="title"><%= link_to event.name, event %></h2>
 		<p class="meta"><span class="date"><%= event.event_date %></span></p>
-		<p><%= event.description %></p>
+		<p><%= event.description.split[0...30].join(' ') %> ...</p>
 		<%= link_to 'Upraviť', edit_event_path(event) %>&nbsp;|&nbsp;
 		<%= link_to 'Zmazať', event, :confirm => 'Ozaj chcete vymazať akciu?', :method => :delete %>
 	</div>
