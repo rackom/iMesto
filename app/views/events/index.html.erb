@@ -1,0 +1,14 @@
+<% @events.each do |event| %>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+    	<h2 class="title"><%= link_to event.name, event %></h2>
+		<p class="meta"><span class="date"><%= event.event_date %></span></p>
+		<p><%= event.description %></p>
+		<%= link_to 'Upraviť', edit_event_path(event) %>&nbsp;|&nbsp;
+		<%= link_to 'Zmazať', event, :confirm => 'Ozaj chcete vymazať akciu?', :method => :delete %>
+	</div>
+<% end %>
+
+<br />
+
+<%= link_to 'Nová akcia', new_message_path %>

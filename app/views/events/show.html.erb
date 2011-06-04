@@ -1,0 +1,10 @@
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+	<h2 class="title"><%= @event.name %></h2>
+	<p class="meta"><span class="date"><%= @event.event_date.strftime("%d.%m.%Y - %H:%M") %></span><span class="posted"><%= @event.address %></span></p>
+	<p><%= @event.description %></p>
+	<img src="http://maps.google.com/maps/api/staticmap?center=<%= @event.lat %>,<%= @event.lon %>&zoom=15&size=530x150&maptype=roadmap&markers=color:blue%7C%7C<%= @event.lat %>,<%= @event.lon %>&sensor=false">
+	<%= link_to 'Upraviť', edit_event_path(@event) %>&nbsp;|&nbsp;
+	<%= link_to 'Zmazať', @event, :confirm => 'Ozaj chcete vymazať akciu?', :method => :delete %>&nbsp;|&nbsp;
+	<%= link_to 'Späť', events_path %>
+</div>
