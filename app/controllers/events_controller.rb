@@ -43,8 +43,11 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
-    @event.lat = Geocoder.coordinates(@event.address)[0];
-    @event.lon = Geocoder.coordinates(@event.address)[1];
+    
+    if not @event.address == ""
+      @event.lat = Geocoder.coordinates(@event.address)[0];
+      @event.lon = Geocoder.coordinates(@event.address)[1];
+    end
 
     respond_to do |format|
       if @event.save
@@ -61,8 +64,11 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     @event = Event.find(params[:id])
-    @event.lat = Geocoder.coordinates(@event.address)[0];
-    @event.lon = Geocoder.coordinates(@event.address)[1];
+    
+    if not @event.address == ""
+      @event.lat = Geocoder.coordinates(@event.address)[0];
+      @event.lon = Geocoder.coordinates(@event.address)[1];
+    end
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
