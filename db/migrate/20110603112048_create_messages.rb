@@ -1,7 +1,7 @@
 class CreateMessages < ActiveRecord::Migration
   def self.up
     create_table :messages do |t|
-      t.string :message_text
+      t.text :message_text
       t.string :message_url
 
       t.timestamps

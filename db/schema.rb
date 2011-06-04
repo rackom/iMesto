@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110603112048) do
 
   create_table "messages", :force => true do |t|
-    t.string   "message_text"
+    t.text     "message_text"
     t.string   "message_url"
     t.datetime "created_at"
     t.datetime "updated_at"
