@@ -8,6 +8,7 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 gem "rake", "0.8.7"
 gem 'geocoder', '1.0.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
