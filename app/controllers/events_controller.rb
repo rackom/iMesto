@@ -6,8 +6,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @events.to_xml(:only => [:id, :name, :description, :address, :event_date, :lat, :lon]) }
-      format.json  { render :json => @events.to_json(:only => [:id, :name, :description, :address, :event_date, :lat, :lon]) }      
+      format.xml  { render :xml => @events.to_xml(:only => [:id, :title, :message, :address, :event_date, :lat, :lon]) }
+      format.json  { render :json => @events.to_json(:only => [:id, :title, :message, :address, :event_date, :lat, :lon]) }      
     end
   end
 
@@ -18,8 +18,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @event.to_xml(:only => [:id, :name, :description, :address, :event_date, :lat, :lon]) }
-      format.json  { render :json => @event.to_json(:only => [:id, :name, :description, :address, :event_date, :lat, :lon]) }      
+      format.xml  { render :xml => @event.to_xml(:only => [:id, :title, :message, :address, :event_date, :lat, :lon]) }
+      format.json  { render :json => @event.to_json(:only => [:id, :title, :message, :address, :event_date, :lat, :lon]) }      
     end
   end
 

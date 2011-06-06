@@ -1,8 +1,8 @@
 class CreateEvents < ActiveRecord::Migration
   def self.up
     create_table :events do |t|
-      t.string :name
-      t.text :description
+      t.string :title
+      t.text :message
       t.string :address
       t.datetime :event_date
       t.float :lat

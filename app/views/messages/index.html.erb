@@ -1,8 +1,9 @@
 <% @messages.each do |message| %>
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
-    	<%= message.message_text %>
-		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><%= link_to 'Odkaz', message.message_url %></span></p>
+		<h2 class="title"><%= message.title %></h2>
+		<p class="meta"><span class="date"><%= message.created_at %></span><span class="posted"><%= link_to 'Odkaz', message.url %></span></p>
+    	<p><%= message.message %></p>
 		<%= link_to 'Upraviť', edit_message_path(message) %>&nbsp;|&nbsp;
 		<%= link_to 'Zmazať', message, :confirm => 'Ozaj chcete vymazať oznam?', :method => :delete %>
 	</div>

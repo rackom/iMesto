@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Nadpis" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.label "Oznam" %><br />
-    <%= f.text_area :message_text %>
+    <%= f.text_area :message %>
   </div>
   <div class="field">
     <%= f.label "Odkaz" %><br />
-    <%= f.text_field :message_url, :value => "http://" %>
+    <%= f.text_field :url %>
   </div>
   <div class="actions">
     <%= f.submit %>

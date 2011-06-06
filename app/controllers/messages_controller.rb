@@ -6,8 +6,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @messages.to_xml(:only => [:id, :message_text, :message_url, :created_at]) }
-      format.json  { render :json => @messages.to_json(:only => [:id, :message_text, :message_url, :created_at]) }
+      format.xml  { render :xml => @messages.to_xml(:only => [:id, :title, :message, :url, :created_at]) }
+      format.json  { render :json => @messages.to_json(:only => [:id, :title, :message, :url, :created_at]) }
     end
   end
 
@@ -18,8 +18,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @message.to_xml(:only => [:id, :message_text, :message_url, :created_at]) }
-      format.json  { render :json => @message.to_json(:only => [:id, :message_text, :message_url, :created_at]) }
+      format.xml  { render :xml => @message.to_xml(:only => [:id, :title, :message, :url, :created_at]) }
+      format.json  { render :json => @message.to_json(:only => [:id, :title, :message, :url, :created_at]) }
     end
   end
 

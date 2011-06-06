@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(:version => 20110604065118) do
 
   create_table "events", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string   "title"
+    t.text     "message"
     t.string   "address"
     t.datetime "event_date"
     t.float    "lat"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20110604065118) do
   end
 
   create_table "messages", :force => true do |t|
-    t.text     "message_text"
-    t.string   "message_url"
+    t.string   "title"
+    t.text     "message"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

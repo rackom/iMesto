@@ -1,3 +1,3 @@
 class Message < ActiveRecord::Base
-  validates_presence_of :message_text, :message_url
+  validates_presence_of :message, :url
 end

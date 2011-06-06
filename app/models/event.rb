@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :name, :description, :address
+  validates_presence_of :title, :message, :address
 end

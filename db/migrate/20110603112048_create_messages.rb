@@ -1,8 +1,9 @@
 class CreateMessages < ActiveRecord::Migration
   def self.up
     create_table :messages do |t|
-      t.text :message_text
-      t.string :message_url
+      t.string :title
+      t.text :message
+      t.string :url
 
       t.timestamps
     end
