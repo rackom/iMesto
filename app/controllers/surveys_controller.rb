@@ -67,6 +67,7 @@ class SurveysController < ApplicationController
   # hlasovanie
   def vote
     @answer = Answer.find(params[:answer_id])
+    @answer.vote
   end
 
   # najnovsie hlasovanie

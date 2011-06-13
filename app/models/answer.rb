@@ -7,4 +7,9 @@ class Answer < ActiveRecord::Base
     url = '/surveys/vote/'+self.id.to_s
     url
   end
+  
+  def vote
+    self.points += 1
+    self.save
+  end
 end
