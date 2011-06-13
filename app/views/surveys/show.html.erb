@@ -1,21 +1,18 @@
-<p>  
-  <strong>Name:</strong>  
-  <%=h @survey.name %>  
-</p>  
-  
-<ol>  
+<h1><%= @survey.name %></h1>
+
+<p> 
   <% for question in @survey.questions %>  
-  <li><%= h question.content %></li>  
+  <p><%= h question.content %></p>
   <ul>  
-    <% for answer in question.answers %>  
-      <li><%= h answer.content %></li>  
+    <% for answer in question.answers %>
+      <li><%= answer.content %> (<%= answer.points %> hlasov)</li>
     <% end %>  
   </ul>  
   <% end %>  
-</ol>
+</p>
   
 <p>  
-  <%= link_to "Edit", edit_survey_path(@survey) %> |  
-  <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |  
-  <%= link_to "View All", surveys_path %>  
+  <%= link_to "Upraviť", edit_survey_path(@survey) %> |  
+  <%= link_to "Vymazať", @survey, :confirm => 'Sta si istý že chcete vymazať dotazník?', :method => :delete %> |  
+  <%= link_to "Zobraziť všetky", surveys_path %>  
 </p>

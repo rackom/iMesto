@@ -1,11 +1,9 @@
 <div class="fields">  
   <p>  
-    <%= f.label :content, "Question" %>  
-    <%= link_to_remove_fields "remove", f %><br />  
-    <%= f.text_area :content, :rows => 3 %><br />  
+    <%= f.label :content, "Otázka" %><br>
+    <%= f.text_area :content, :rows => 3, :size => '70x4' %><br />  
   </p>  
   <% f.fields_for :answers do |builder| %>  
     <%= render 'answer_fields', :f => builder %>  
-  <% end %>  
-  <p><%= link_to_add_fields "Add Answer", f, :answers %></p>  
+  <% end %>
 </div>

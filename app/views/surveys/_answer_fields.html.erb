@@ -1,5 +1,5 @@
 <p class="fields">  
-  <%= f.label :content, "Answer" %>  
-  <%= f.text_field :content %>  
-  <%= link_to_remove_fields "remove", f %>  
+  <%= f.label :content, "Odpoveď" %>&nbsp;|&nbsp;
+  <%= link_to_remove_fields "vymazať", f %><br>
+  <%= f.text_area :content, :size => '70x2' %>
 </p>

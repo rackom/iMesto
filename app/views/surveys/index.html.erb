@@ -1,23 +1,23 @@
-<h1>Listing surveys</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @surveys.each do |survey| %>
-  <tr>
-    <td><%= survey.name %></td>
-    <td><%= link_to 'Show', survey %></td>
-    <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-    <td><%= link_to 'Destroy', survey, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div style="clear: both;">&nbsp;</div>
+	<div class="entry">
+    	<h2 class="title"><%= survey.name %></h2>
+		<p>
+		  <% for question in survey.questions %>
+ 		  <p><%= h question.content %></p>
+		  <ul>  
+		    <% for answer in question.answers %>
+		      <li><%= h answer.content %></li>
+		    <% end %>  
+		  </ul>  
+		  <% end %>
+		</p>
+	    <td><%= link_to 'Zobraziť', survey %></td>&nbsp;|&nbsp;
+	    <td><%= link_to 'Upraviť', edit_survey_path(survey) %></td>&nbsp;|&nbsp;
+	    <td><%= link_to 'Vymazať', survey, :confirm => 'Sta si istý, že chcete vymazať anketu?', :method => :delete %></td>
+	</div>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Survey', new_survey_path %>
+<%= link_to 'Nová anketa', new_survey_path %>

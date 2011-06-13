@@ -3,6 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.integer :question_id
       t.text :content
+      t.integer :points, :default => 0
 
       t.timestamps
     end
