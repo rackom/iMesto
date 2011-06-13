@@ -1,9 +1,10 @@
 IMesto::Application.routes.draw do
   resources :surveys
-
   resources :events
-
   resources :messages
+  
+  match ':controller/:action/:answer_id'
+  match 'new_survey' => 'surveys#newest'
   
   root :to => 'messages#index'
 

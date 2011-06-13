@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20110613082115) do
     t.integer  "question_id"
     t.text     "content"
     t.integer  "points",      :default => 0
+    t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

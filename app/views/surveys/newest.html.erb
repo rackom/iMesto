@@ -8,10 +8,8 @@
 	    <% for answer in question.answers %>
 	      <li><%= h answer.content %> (<%= answer.points %> hlasov)</li>
 	    <% end %>  
-	  </ul>
+	  </ul>  
 	  <% end %>
 	</p>
-	<%= link_to "Zobraziť všetky", surveys_path %>&nbsp;|&nbsp;
-    <%= link_to "Upraviť", edit_survey_path(@survey) %>&nbsp;|&nbsp;
-	<%= link_to "Vymazať", @survey, :confirm => 'Sta si istý že chcete vymazať dotazník?', :method => :delete %>
+    <%= link_to "Zobraziť všetky", surveys_path %>
 </div>

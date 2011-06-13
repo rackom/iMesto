@@ -17,7 +17,108 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @survey }
+      format.xml { render :xml => @survey.to_xml (
+        :only => [
+          :updated_at
+        ],
+        :include => {
+          :questions => {
+            :only => [
+              :content
+            ],
+            :include => {
+              :answers => {
+                :only => [
+                  :content,
+                  :points,
+                ],
+                :methods => [ :url ]
+              }
+            }
+          }
+        }
+        )
+      }
+      format.json  { render :json => @survey.to_json (
+        :only => [
+          :updated_at
+        ],
+        :include => {
+          :questions => {
+            :only => [
+              :content
+            ],
+            :include => {
+              :answers => {
+                :only => [
+                  :content,
+                  :points,
+                ],
+                :methods => [ :url ]
+              }
+            }
+          }
+        }
+        )
+      }
+    end
+  end
+  
+  # hlasovanie
+  def vote
+    @answer = Answer.find(params[:answer_id])
+  end
+
+  # najnovsie hlasovanie
+  def newest
+    @survey = Survey.last
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml { render :xml => @survey.to_xml (
+        :only => [
+          :updated_at
+        ],
+        :include => {
+          :questions => {
+            :only => [
+              :content
+            ],
+            :include => {
+              :answers => {
+                :only => [
+                  :content,
+                  :points,
+                ],
+                :methods => [ :url ]
+              }
+            }
+          }
+        }
+        )
+      }
+      format.json  { render :json => @survey.to_json (
+        :only => [
+          :updated_at
+        ],
+        :include => {
+          :questions => {
+            :only => [
+              :content
+            ],
+            :include => {
+              :answers => {
+                :only => [
+                  :content,
+                  :points,
+                ],
+                :methods => [ :url ]
+              }
+            }
+          }
+        }
+        )
+      }
     end
   end
 

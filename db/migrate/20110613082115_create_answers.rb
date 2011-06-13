@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.integer :question_id
       t.text :content
       t.integer :points, :default => 0
+      t.text :url
 
       t.timestamps
     end
