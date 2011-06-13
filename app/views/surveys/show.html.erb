@@ -1,3 +1,50 @@
+<script type="text/javascript">
+			var chart;
+			$(document).ready(function() {
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container',
+						backgroundColor: '#b7afa4',
+						plotBorderWidth: 0,
+						plotBorderColor: '#b7afa4',
+						plotShadow: false
+					},
+					title: {
+						text: 'Anketa'
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Podiel odpovedi',
+						data: [
+						    <% for answer in @survey.questions.first.answers %>
+						      ['<%= answer.content %>', <%= answer.points %>],
+						    <% end %>
+						]
+					}]
+				});
+			});
+				
+		</script>
+
 <div style="clear: both;">&nbsp;</div>
 <div class="entry">
 	<h2 class="title"><%= @survey.name %></h2>
@@ -15,3 +62,5 @@
     <%= link_to "Upraviť", edit_survey_path(@survey) %>&nbsp;|&nbsp;
 	<%= link_to "Vymazať", @survey, :confirm => 'Sta si istý že chcete vymazať dotazník?', :method => :delete %>
 </div>
+
+<div id="container" style="width:100%; height:300px;"></div>
