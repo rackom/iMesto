@@ -1,3 +1,9 @@
+<div class="entry">
+  <h3><%= link_to 'Nový oznam', new_message_path %></h3>
+</div>
+
+<br />
+
 <% @messages.each do |message| %>
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
@@ -8,7 +14,3 @@
 		<%= link_to 'Zmazať', message, :confirm => 'Ozaj chcete vymazať oznam?', :method => :delete %>
 	</div>
 <% end %>
-
-<br />
-
-<%= link_to 'Nový oznam', new_message_path %>

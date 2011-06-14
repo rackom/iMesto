@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.xml
   def index
-    @surveys = Survey.all
+    @surveys = Survey.all(:order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb

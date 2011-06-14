@@ -1,3 +1,9 @@
+<div class="entry">
+  <h3><%= link_to 'Nová anketa', new_survey_path %></h3>
+</div>
+
+<br />
+
 <% @surveys.each do |survey| %>
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
@@ -17,7 +23,3 @@
 	    <%= link_to 'Vymazať', survey, :confirm => 'Sta si istý, že chcete vymazať anketu?', :method => :delete %>
 	</div>
 <% end %>
-
-<br />
-
-<%= link_to 'Nová anketa', new_survey_path %>

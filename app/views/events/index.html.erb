@@ -1,3 +1,9 @@
+<div class="entry">
+  <h3><%= link_to 'Nová akcia', new_event_path %></h3>
+</div>
+
+<br />
+
 <% @events.each do |event| %>
 	<div style="clear: both;">&nbsp;</div>
 	<div class="entry">
@@ -8,7 +14,3 @@
 		<%= link_to 'Zmazať', event, :confirm => 'Ozaj chcete vymazať akciu?', :method => :delete %>
 	</div>
 <% end %>
-
-<br />
-
-<%= link_to 'Nová akcia', new_event_path %>
