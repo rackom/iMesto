@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem "rake", "0.8.7"
 gem 'geocoder', '1.0.1'
 gem 'jquery-rails'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'rspec-rails'
