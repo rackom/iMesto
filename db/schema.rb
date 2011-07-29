@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613082115) do
+ActiveRecord::Schema.define(:version => 20110729141624) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -36,6 +36,20 @@ ActiveRecord::Schema.define(:version => 20110613082115) do
     t.string   "title"
     t.text     "message"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "places", :force => true do |t|
+    t.string   "name"
+    t.string   "vicinity"
+    t.string   "type_poi"
+    t.float    "lat"
+    t.float    "lon"
+    t.string   "thumbnail"
+    t.string   "address"
+    t.string   "phoneNumber"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

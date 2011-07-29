@@ -1,0 +1,29 @@
+<div class="entry">
+  <h3><%= link_to 'Nové miesto', new_place_path %></h3>
+</div>
+
+<br />
+
+<table width=100%>
+  <tr align=left>
+    <th>Názov</th>
+    <th>Okolie</th>
+    <th>Typ</th>
+    <th>Adresa</th>
+    <th>Telefón</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @places.each do |place| %>
+  <tr>
+    <td><%= place.name %></td>
+    <td><%= place.vicinity %></td>
+    <td><%= place.type_poi %></td>
+    <td><%= place.address %></td>
+    <td><%= place.phoneNumber %></td>
+    <td><%= link_to 'Upraviť', edit_place_path(place) %></td>
+    <td><%= link_to 'Zmazať', place, :confirm => 'Ozaj chcete vymazať miesto?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

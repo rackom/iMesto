@@ -1,4 +1,6 @@
 IMesto::Application.routes.draw do
+  resources :places
+
   resources :surveys
   resources :events
   resources :messages

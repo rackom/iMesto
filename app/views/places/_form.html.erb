@@ -1,0 +1,45 @@
+<%= form_for(@place) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Názov" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Okolie" %><br />
+    <%= f.text_field :vicinity %>
+  </div>
+  <div class="field">
+    <%= f.label "Typ" %><br />
+    <%= f.select(:type_poi, [ "Lekarne", "Zadravotnicke zariadenia", "Ministerstvo", "Urad miestnej spravy", "Urad verejnej spravy", "Vysoka skola", "Stredna skola", "Zakladna skola", "Materska skola", "Domov mladeze", "Divadlo", "Kino", "Kniznica", "Muzeum/Galeria", "Kulturne centrum", "Kupalisko" ]) %>
+  </div>
+  <div class="field">
+    <%= f.label "Náhľad" %><br />
+    <%= f.text_field :thumbnail %>
+  </div>
+  <div class="field">
+    <%= f.label "Adresa" %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label "Telefón" %><br />
+    <%= f.text_field :phoneNumber %>
+  </div>
+  <div class="field">
+    <%= f.label "Popis" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
